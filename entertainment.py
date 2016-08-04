@@ -140,13 +140,6 @@ tvshow = [breaking_bad, big_bang_theory,mr_robot,the_office,better_call_saul,son
 # input at the begining of the program. Redirect to movies or tv shows.
 
 def video_input():
-	
-
-	""" fresh_tomatoes.open_movies_page(movies) """
-
-	""" I wanted to create just one main movie html page and then 
-		create a button to redirect to a tv show html page but 
-		I don't find a way to do program that. Any hint for me? """
 
 	output = 0
 	
