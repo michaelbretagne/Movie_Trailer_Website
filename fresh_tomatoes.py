@@ -125,7 +125,8 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id=\
+"{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h3>{movie_title} ({year_release})</h3>
     <h4>Runing time: {runing_time}</h4>
@@ -135,7 +136,8 @@ movie_tile_content = '''
 
 # A single tv show entry html template
 tvshow_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id=\
+"{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h3>{tvshow_title} ({year_release})</h3>
     <h4>Runing time: {runing_time}</h4>
@@ -169,7 +171,8 @@ def create_movie_tiles_content(videos):
                 poster_image_url=video.poster_image_url,
                 trailer_youtube_id=trailer_youtube_id
             )
-        elif choice == "TvShow":  # if you choose to watch the tv shows trailers
+        # if you choose to watch the tv shows trailers
+        elif choice == "TvShow":
             # Extract the youtube ID from the url
             youtube_id_match = re.search(
                 r'(?<=v=)[^&#]+', video.trailer_youtube_url)
@@ -194,6 +197,7 @@ def create_movie_tiles_content(videos):
             print "error"
 
     return content
+
 
 def open_movies_page(videos):
     # Create or overwrite the output file
